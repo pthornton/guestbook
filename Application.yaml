@@ -16,4 +16,7 @@ spec:
     path: helm
     repoURL: https://github.com/pthornton/guestbook
     targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
 
