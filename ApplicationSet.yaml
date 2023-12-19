@@ -5,13 +5,10 @@ metadata:
   name: guestbook
 spec:
   generators:
-  - list:
-      elements:
-      - cluster: localhost
-        url: https://kubernetes.default.svc
+  - clusters: {}
   template:
     metadata:
-      name: '{{cluster}}-guestbook'
+      name: '{{name}}-guestbook'
     spec:
       project: default
       source:
@@ -19,7 +16,7 @@ spec:
         targetRevision: HEAD
         path: helm
       destination:
-        server: '{{url}}'
+        server: '{{server}}'
         namespace: guestbook
       syncPolicy:
         syncOptions:
